@@ -1,0 +1,93 @@
+<html>
+<head>
+<title></title>
+<meta charset="utf-8" />
+</head>
+<style type="text/css">
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#tab{
+	margin: 50px auto;
+	text-align: center;
+	line-height: 30px;
+	padding-left: 8px;
+	padding-right: 8px;
+	width: 255px;
+	height: 500px;
+	background: #ccc;
+}
+
+#tab ul li{
+	width: 75px;
+	height: 75px;
+	margin: 5px;
+	background: #000;
+	color: #fff;
+	float: left;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.action{
+	background: #fff!important;
+	color: #000!important;
+}
+.clear{
+	clear: both;
+}
+.text{
+	border-radius: 4px;
+	background: #fff;
+}
+</style>
+<script type="text/javascript">
+window.onload = function(){
+	var oDiv = document.getElementById('tab');
+	var aLi = oDiv.getElementsByTagName('li');
+	var oTxt = oDiv.getElementsByTagName('div')[1];
+	var arr=[
+		'快过年了，大家去哪里玩呢~',
+		'二月，开学了！',
+		'三月，生日！！！',
+		'四月，努力！！！！'
+
+	];
+
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].index = i;
+		aLi[i].onmouseover=function(){
+			for(var i=0;i<aLi.length;i++){
+				aLi[i].className='';
+			}
+			this.className='action';
+			oTxt.innerHTML='<h2>'+(this.index+1)+'月活动</h2><p>'+arr[this.index]+'</p>';
+		}
+	}
+	
+}
+</script>
+<body>
+	<div id="tab" class="calendar">
+		<ul>
+			<li class="action"><h2>1</h2><p>JAN</p></li>
+			<li><h2>2</h2><p>FER</p></li>
+			<li><h2>3</h2><p>MAR</p></li>
+			<li><h2>4</h2><p>APR</p></li>
+			<li><h2>5</h2><p>MAY</p></li>
+			<li><h2>6</h2><p>JUN</p></li>
+			<li><h2>7</h2><p>JUL</p></li>
+			<li><h2>8</h2><p>AUG</p></li>
+			<li><h2>9</h2><p>SEP</p></li>
+			<li><h2>10</h2><p>OCT</p></li>
+			<li><h2>11</h2><p>NOV</p></li>
+			<li><h2>12</h2><p>DEC</p></li>
+		</ul>
+		<div class="clear"></div>
+		<div class="text">
+			<h2>1月活动</h2>
+			<p>快过年了，大家去哪里玩呢~</p>
+		</div>
+	</div>
+</body>
+</html>
