@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>选项卡</title>
+<meta charset="utf-8" />
+<style>
+	#div1 .action{
+		background: yellow;
+	}
+	#div1 div{
+		height: 200px;
+		width: 200px;
+		border: 1px solid #ccc;
+		background: #eee;
+		display: none;
+	}
+</style>
+<script type="text/javascript">
+window.onload = function(){
+	var oDiv = document.getElementById('div1');
+	var aBtn = oDiv.getElementsByTagName('input');
+	var aDiv = oDiv.getElementsByTagName('div');
+
+	for(i=0; i<aBtn.length; i++){
+		aBtn[i].index = i;
+		aBtn[i].onclick = function(){
+			for(i=0; i<aBtn.length; i++){
+				aBtn[i].className = '';
+				aDiv[i].style.display='none';
+			}
+			this.className = 'action';
+			aDiv[this.index].style.display = 'block';
+		}
+	}
+}
+</script>
+</head>
+<body>
+	<div id="div1">
+		<input type="button" value="路飞" class="action" />
+		<input type="button" value="奈美" />
+		<input type="button" value="罗宾" />
+		<input type="button" value="佐罗" />
+		<div style="display:block;">1111</div>
+		<div>2222</div>
+		<div>3333</div>
+		<div>4444</div>
+	</div>
+</body>
+</html>
