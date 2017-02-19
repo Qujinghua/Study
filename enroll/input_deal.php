@@ -51,7 +51,7 @@ for ($i=0; $i < sizeof($_POST); $i++) {
 		$i = sizeof($_POST);
 	}
 }
-echo "成功";
+echo "报名成功";
 echo "<br/> <a href='admin/input.php'>查看报名信息<a>";
 break;
 

@@ -13,6 +13,7 @@ require_once 'connect.php';
 </head>
 <body>
 	<div class="enroll">
+
 		<form action="input_deal.php?action=add" method="post">
 			<h1>请填写下列报名信息</h1>
 			<table>
