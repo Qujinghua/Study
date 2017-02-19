@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+
+function remove(arr, item) {
+	var n=[];
+	for(var i=0;i<arr.length;i++){
+        if(item!=arr[i]){
+            n.push(arr[i]);
+        }
+    }
+	return n;
+}
+document.write(remove([1, 2, 3, 4, 2], 2));
+
+</script>
+</html>
