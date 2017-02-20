@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	function append(arr, item) {
+	var a=[];
+    var l=arr.length;
+    arr.splice(l,0,item);
+    for(var i=0;i<=l;i++){
+        a.push(arr[i]);
+    }
+    return a;
+}
+document.write(append([1, 2, 3, 4],  10));
+document.write("<br>");
+
+function append2(arr, item) {
+	var a=arr.slice(0);
+    a.push(item);
+    return a;
+}
+document.write(append2([1, 2, 3, 4],  10));
+</script>
+</html>

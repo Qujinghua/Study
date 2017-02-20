@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	function truncate(arr) {
+	var a=[];
+    for(var i=0;i<arr.length-1;i++){
+        a.push(arr[i]);
+    }
+    return a;
+	}
+	document.write(truncate([1, 2, 3, 4]));
+
+	function truncate2(arr) {
+		var b=arr.slice(0);
+		return b.slice(0,-1);
+	}
+	document.write(truncate2([1, 2, 3, 4]));
+</script>
+</html>
