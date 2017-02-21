@@ -1,1 +1,25 @@
-找重复元素.html
+<!DOCTYPE html>
+<html>
+<head>
+	<title>	</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	function duplicates(arr) {
+	    var a=[];
+		for(i=0;i<arr.length-1;i++){
+	        for(j=i+1;j<arr.length;j++){
+	            if(arr[i]==arr[j]){
+	                if(a.indexOf(arr[i])==-1){  //判断元素是否已存在
+	                    a.push(arr[i]);
+	                }
+	            }
+	        }
+	    }
+	    return a;
+	}
+	document.write(duplicates([1, 2, 4, 4, 3, 3, 1, 5, 3]).sort());
+</script>
+</html>
