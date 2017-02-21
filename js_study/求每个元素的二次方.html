@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	function square(arr) {
+		var a=[];
+	    for(var i=0;i<arr.length;i++){
+	        a.push(arr[i]*arr[i]);
+	    }
+	    return a;
+	}
+	document.write(square([1, 2, 3, 4]));
+
+	function square2(arr) {
+	    return arr.map(function(item,index,array){
+	    	//数组迭代函数map为数组中的所有元素添加函数
+	        return item*item;
+	    })
+	}
+	document.write(square2([1, 2, 3, 4]));
+
+	function square3(arr) {
+	   //声明一个新的数组存放结果
+	     var a = [];
+	     arr.forEach(function(e){
+	         //将arr中的每一个元素求平方后，加入到a数组中
+	         a.push(e*e);
+	     });
+	     return a;
+	 }
+	 document.write(square3([1, 2, 3, 4]));
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>	</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	function count(start, end) {
+		// console.log(start++);
+		document.write(start);
+	    var timer = setInterval(function(){
+	        if(start<=end){
+	        	// console.log(start++);
+	            document.write("<br>"+start++);
+	        }else{
+	            clearInterval(timer);
+	        }
+	    },100);
+	  	return {
+	        cancel:function(){
+	            clearInterval(timer);
+	        }
+	    }
+	}
+	document.write(count(1,100));
+</script>
+</html>
