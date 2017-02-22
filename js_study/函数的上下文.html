@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+
+//三种方案
+//apply
+function speak(fn, obj) {
+    return fn.apply(obj);
+}
+//call
+function speak2(fn, obj) {
+    return fn.call(obj);
+}
+//bind
+function speak3(fn, obj) {
+    return fn.bind(obj)();
+}
+
+document.write(speak(function () {return this.greeting + ', ' + this.name + '!!!';}, {greeting: 'Hello', name: 'Rebecca'})+"<br>");
+document.write(speak2(function () {return this.greeting + ', ' + this.name + '!!!';}, {greeting: 'Hello', name: 'Rebecca'})+"<br>");
+document.write(speak2(function () {return this.greeting + ', ' + this.name + '!!!';}, {greeting: 'Hello', name: 'Rebecca'})+"<br>");
+</script>
+</html>
