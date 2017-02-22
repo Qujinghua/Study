@@ -1,0 +1,86 @@
+<!-- 实现函数 makeClosures，调用之后满足如下条件：
+1、返回一个函数数组 result，长度与 arr 相同
+2、运行 result 中第 i 个函数，即 result[i]()，结果与 fn(arr[i]) 相同 -->
+
+<!-- 输入例子:
+var arr = [1, 2, 3]; 
+var square = function (x) { 
+	return x * x; 
+}; 
+var funcs = makeClosures(arr, square); 
+funcs[1]();
+
+输出例子:
+4 -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+//我首先想到的是使用闭包时因为作用域链引来的副作用，（闭包只能得到包含函数中变量的最后一个值）如果直接用下面第一种写法会导致result中每个函数的参数都是arr[arr.length],在《JavaScript高级程序设计》书中提到的最典型的解决此问题的方法就是用一个立即执行的匿名函数代替闭包负值给数组，这个匿名函数有一个参数num，因为函数参数是按值传递的所以传递给num的就是当前for循环的值。接下来的是根据其他小伙伴的解决方案进行的总结，提供给新来的小伙伴一个总结，页方便自己以后看
+// 此外ES5提供了bind方法，apply(),call(),bind()方法在使用时如果已经对参数进行了定义
+// 又因为在此问题中用的是数组并且需要的是arr[i]所以用forEach()方法就不用考虑第一段中提到的问题
+
+//这种是错误的写法会导致result中每个函数的参数都是arr[arr.length]
+function makeClosures(arr, fn) {
+    var result = new Array();
+     for(var i=0;i<arr.length;i++){
+        result[i] = function(){
+            return fn(arr[i]);            
+        };
+    }
+    return result;
+}
+
+//参考《JavaScript高级程序设计》的典型方法
+function makeClosures2(arr, fn) {
+    var result = new Array();
+    for(var i=0;i<arr.length;i++){
+        result[i] = function(num){
+            return function(){
+                return fn(num);
+                 
+            }
+        }(arr[i]);
+    }
+    return result;
+}
+
+//使用ES5的bind()方法
+function makeClosures3(arr, fn) {
+    var result = new Array();
+    for(var i=0;i<arr.length;i++){
+        result[i] = fn.bind(null,arr[i]);
+    }
+    return result;
+}
+
+//使用forEach()
+function makeClosures4(arr, fn) {
+    var result = new Array();
+    arr.forEach(function(curr){
+        result.push(function(){return fn(curr)});
+    })
+    return result;
+}
+
+var arr = [1, 2, 3]; 
+var square = function (x) { 
+	return x * x; 
+}; 
+var funcs = makeClosures(arr, square); 
+document.write(funcs[1]()+"<br>");
+var funcs2 = makeClosures2(arr, square); 
+document.write(funcs2[1]()+"<br>");
+var funcs3 = makeClosures3(arr, square); 
+document.write(funcs3[1]()+"<br>");
+var funcs4 = makeClosures4(arr, square); 
+document.write(funcs4[1]());
+</script>
+</html>
