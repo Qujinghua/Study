@@ -1,0 +1,40 @@
+<!-- 实现函数 partialUsingArguments，调用之后满足如下条件：
+1、返回一个函数 result
+2、调用 result 之后，返回的结果与调用函数 fn 的结果一致
+3、fn 的调用参数为 partialUsingArguments 的第一个参数之后的全部参数以及 result 的调用参数 
+输入例子:
+var a = 1; var b = 2; var c = 3; var d = 4;var test = function (first, second, third, forth) {return first + second + third + forth;};partialUsingArguments(test, a, b)(c, d);
+
+输出例子:
+10 -->
+
+<!-- arguments不能用slice方法直接截取，需要先转换为数组，var args = Array.prototype.slice.call(arguments);合并参数可以使用concat方法，并且也需要将arguments先转换为数组才能使用concat进行合并。最用使用apply执行传入的函数即可。 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	function partialUsingArguments(fn){
+		//先获取p函数第一个参数之后的全部参数
+		var args = Array.prototype.slice.call(arguments,1);
+		//声明result函数
+		var result = function(){
+			//使用concat合并两个或多个数组中的元素
+			return fn.apply(null,args.concat([].slice.call(arguments)));
+		}
+		return result;
+	}
+	var a = 1;
+	var b = 2;
+	var c = 3;
+	var d = 4;
+	var test = function(first,second,third,forth){
+		return first + second + third + forth;
+	}
+	document.write(partialUsingArguments(test,a,b)(c,d));
+</script>
+</html>
