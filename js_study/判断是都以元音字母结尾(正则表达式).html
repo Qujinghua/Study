@@ -1,0 +1,25 @@
+<!-- 给定字符串 str，检查其是否以元音字母结尾
+1、元音字母包括 a，e，i，o，u，以及对应的大写
+2、包含返回 true，否则返回 false 
+输入例子:
+endsWithVowel('gorilla')
+
+输出例子:
+true -->
+
+<!-- 首先确定元音集合[a,e,i,o,u]，然后是以元音结尾，加上$，最后通配大小写，加上i。因此正则表达式为:/[a,e,i,o,u]$/i，最后用test方法去检测字符串str -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	function endsWithVowel(str){
+		return /[a,e,i,o,u]$/i.test(str);
+	}
+	document.write(endsWithVowel('gorilla'));
+</script>
+</html>

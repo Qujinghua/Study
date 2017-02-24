@@ -1,0 +1,33 @@
+<!-- 给定字符串 str，检查其是否符合如下格式
+1、XXX-XXX-XXXX
+2、其中 X 为 Number 类型 
+输入例子:
+matchesPattern('800-555-1212')
+
+输出例子:
+true -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+</head>
+<body>
+<!-- 本题需要注意格式，开头^和结尾$必须加上来限定字符串，3个数可表示为\d{3}，4个数则为\d{4}，{n}表示前面内容出现的次数。正则表达式可写作/^\d{3}-\d{3}-\d{4}$/，有相同部分\d{3}-，因此也可写作/^(\d{3}-){2}\d{4}$/
+
+也可以写作：/^\d{3}\-\d{3}\-\d{4}$/ -->
+</body>
+<script type="text/javascript">
+function matchesPattern(str) {
+	return (/^\d{3}\-\d{3}\-\d{4}$/).test(str);
+}
+document.write(matchesPattern('800-555-1212')+"<br>");
+
+function matchesPattern2(str) {
+	return (/^\d{3}-\d{3}-\d{4}$/).test(str);
+}
+document.write(matchesPattern2('800-555-1212')+"<br>");
+</script>
+</html>

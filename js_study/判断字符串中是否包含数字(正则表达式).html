@@ -1,0 +1,43 @@
+<!-- 给定字符串 str，检查其是否包含数字，包含返回 true，否则返回 false 
+输入例子:
+containsNumber('abc123')
+
+输出例子:
+true，否则返回 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	// function containsNumber(str) {
+	// 	var arr = str.split("");
+	//     var a = [];
+	//     for(var i in arr){
+	//     	document.write(arr[1]);
+	//         if(typeof arr[i]=='number'){
+	//             document.write(111);
+	            
+	//         }
+	//         document.write(typeof parseInt(arr[i]));
+	//     }
+	//     return a[0]==1;
+	// }
+	// containsNumber('abc123');
+	 
+	// function containsNumber(str){
+	// 	var arr = parseInt(str);
+	// 	return arr;
+	// }
+	// document.write(containsNumber('abc123'));
+	 
+	function containsNumber(str){
+		var b = /\d/;
+		return b.test(str);
+	}
+	document.write(containsNumber('abc123'));
+</script>
+</html>

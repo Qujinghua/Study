@@ -1,0 +1,33 @@
+<!-- 给定字符串 str，检查其是否包含 连续3个数字 
+1、如果包含，返回最新出现的 3 个数字的字符串
+2、如果不包含，返回 false 
+输入例子:
+captureThreeNumbers('9876543')
+
+输出例子:
+987 -->
+
+<!-- 题目描述有问题，实际考察的是字符串中是否含有连续的三个任意数字，而不是三个连续的数字。依题，若存在连续的三个任意数字，则返回最早出现的三个数字，若不存在，则返回false。因此需要用到match方法，match()返回的是正则表达式匹配的字符串数组，连续的三个任意数字用正则表达式表示为/\d{3}/。 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+function captureThreeNumbers(str) {
+   	//声明一个数组保存匹配的字符串结果
+  	var arr = str.match(/\d{3}/);
+    //如果arr存在目标结果，则返回第一个元素，即最早出现的目标结果
+    if(arr){
+        return arr[0];
+    }else{
+    	return false;
+    }
+}
+document.write(captureThreeNumbers('987654321'));
+</script>
+</html>
