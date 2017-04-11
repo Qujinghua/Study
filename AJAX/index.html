@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="test"></div>
+<button type="button" onclick="loadXMLDoc()">修改</button>
+
+<script>
+    function loadXMLDoc(){
+        var xmlhttp;
+        if(window.XMLHttpRequest){
+            //IE7+,Firefox,Chrome,Opera,Safari浏览器
+            xmlhttp=new XMLHttpRequest();
+        }else{
+            //IE6,IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function(){
+            if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                document.getElementById("test").innerHTML=xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET","test.txt",true);
+        xmlhttp.send();
+    }
+    
+
+</script>
+</body>
+</html>
