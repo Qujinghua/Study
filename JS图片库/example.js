@@ -47,6 +47,7 @@ function prepareGallery(){
             // showPic(this);
             // return false;
         }
+        // links[i].onkeypress = links[i].onclick;
     }
 }
 function addLoadEvent(func){
