@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+*{
+    list-style: none;
+    text-decoration: none;
+    font-size: 20px;
+    color: #0AA;
+}
+.a{
+    position: relative;
+    margin-left: 200px;
+}
+.dropdown>a{
+    display: block;
+    height: 60px;
+    width: 100px;
+}
+.dropdown:hover .sub-menu{
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1); 
+    opacity: 1;
+    -moz-opacity: 1;
+    background-color: #fff;
+}
+
+.sub-menu::before{
+    content: '';
+    display: inline-block;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 9px solid #CCC;
+    position: absolute;
+    top: -9px;
+    left: 62px;
+}
+.sub-menu::after{
+    content: '';
+    display: inline-block;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 9px solid white;
+    position: absolute;
+    top: -8px;
+    left: 62px;
+}
+.sub-menu{
+    line-height: 25px;
+    width: 115px;
+    position: absolute;
+    left: -35px; 
+    top: 30px;
+    border: 1px solid #E2E2E2;
+    list-style: none;
+    background-color: #fff;
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -moz-transform-origin: 50% 0;
+    -ms-transform-origin: 50% 0;
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -moz-transition: all 0.5s cubic-bezier(0.31, 0.57, 0.68, 1.36);
+    -o-transition: all 0.5s cubic-bezier(0.31, 0.57, 0.68, 1.36);
+    -webkit-transition: all 0.5s cubic-bezier(0.31, 0.57, 0.68, 1.36);
+    transition: all 0.5s cubic-bezier(0.31, 0.57, 0.68, 1.36);
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 4px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 4px;
+    box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 4px;
+    z-index: 9999;
+    -moz-opacity: 0;
+    opacity: 0;
+}
+    </style>
+</head>
+<body>
+    <div class="a">  
+        <li class="dropdown">
+            <a href="javascript:;" class="dropdown-link-1">新闻资讯</a>
+            <ul class="sub-menu">
+                <li><a href="http://www.31huiyi.com/newslist/60/">31新闻</a></li>
+                <li><a href="http://www.31huiyi.com/newslist/1/?page=2">专业观点</a></li>
+                <li><a href="javascript:;">行业报告</a></li>
+                <li><a href="javascript:;">产品更新</a></li>
+            </ul>
+        </li>        
+    </div>
+</body>
+</html>
