@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <style>
+        .click{
+            width: 100px;
+            height: 30px;
+            background: #00dff1;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="click">你好</div>
+<div class="show" style="display: none;">我很好</div>
+
+<script>
+// function stopPropagation(e) { 
+//     if (e.stopPropagation){
+//         e.stopPropagation();
+//     }else {
+//         e.cancelBubble = true;
+//     }
+// } 
+// var qrcodeInit = function(){
+// 	$('.click').click(function(){
+// 		$('.show').css("display","block");
+// 	});
+//     $(document).bind('click',function(){ 
+//         $('.show').css('display','none'); 
+//     }); 
+
+//     $('.click').bind('click',function(e){ 
+//         stopPropagation(e); 
+//     }); 
+// }
+// $(function(){
+// 	qrcodeInit();
+// })
+var qrcodeInit = function(){
+    $(".click").on("click", function(e){
+        $(".show").fadeIn("slow");
+        $(".click").css("background","red");
+        $(document).one("click", function(){
+            $(".show").fadeOut("slow");
+            $(".click").css("background","#00dff1");
+        });
+        e.stopPropagation();
+    });
+    $(".show").on("click", function(e){
+        e.stopPropagation();
+    });
+}
+$(function(){
+	qrcodeInit()
+})
+
+
+</script>
+
+</body>
+</html>
