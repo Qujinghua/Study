@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <style>
+            .divBlock{
+                width: 100%;
+                height: 1000px;
+            }
+            .a{background: #927e78}
+            .b{background: #925128}
+            .c{background: #154528}
+            .d{background: #896571}
+            .e{background: #255578}
+            .f{background: #923578}
+            .g{background: #154548}
+
+        </style>
+    </head>
+    <body>
+    <div class="divBlock a"><img class="animated rotateInUpLeft" src="http://www.ibelievei.com/a/img/m-img5.png" alt=""></div>
+    <div class="divBlock b"><img src="http://www.ibelievei.com/a/img/m-img5.png" alt=""></div>
+    <div class="divBlock c"><img src="http://www.ibelievei.com/a/img/m-img5.png" alt=""></div>
+    <div class="divBlock d"><img src="http://www.ibelievei.com/a/img/m-img5.png" alt=""></div>
+    <div class="divBlock e"><img src="http://www.ibelievei.com/a/img/m-img5.png" alt=""></div>
+    <div class="divBlock f"><img src="http://www.ibelievei.com/a/img/m-img5.png" alt=""></div>
+    <div class="divBlock g"><img src="http://www.ibelievei.com/a/img/m-img5.png" alt=""></div>
+    <script>
+        $('body').mousewheel(function(event) {
+            console.log(event.deltaX, event.deltaY, event.deltaFactor);
+            var t = $(window).scrollTop();
+            if(event.deltaY<=0){
+                if(!$('body').is(":animated")){
+                    $('body').animate({'scrollTop':t+1000},2000);
+                }
+                
+            }else{
+                if(!$('body').is(":animated")){
+                    $('body').animate({'scrollTop':t-1000},2000);
+                }
+            }
+            
+
+        });
+        $('img').animate({
+            top:500,
+            opacity:1
+        },1000,'easeOutBounce');
+    </script>
+    </body>
+</html>
