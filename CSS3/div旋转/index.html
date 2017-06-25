@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      .parent{
+        margin: 50px auto;
+        height: 200px;
+        width: 200px;
+        position: relative;
+        border: 1px #333333 solid;
+        border-radius: 3px;
+      }
+      .child{
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        top: 50%;
+        margin-top: -50px;
+        left: 50%;
+        margin-left: -50px;
+        background-color: #0AA1E5;
+        border-radius: 3px;
+      }
+      /*动画*/
+      @-webkit-keyframes child{0%{-webkit-transform:rotate(0)} 50%{-webkit-transform:rotate(180deg)} 100%{-webkit-transform:rotate(360deg)}}
+      @keyframes child{0%{transform:rotate(0)}  50%{transform:rotate(180deg)} 100%{transform:rotate(360deg)}}
+      .child{
+        animation: child 4s linear infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+  </body>
+</html>
